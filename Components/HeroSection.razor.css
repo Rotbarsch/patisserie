@@ -1,0 +1,122 @@
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 48% 52%;
+    min-height: calc(100vh - var(--nav-height) - 18px); /* 18px = nav-rule height */
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* ── Left text panel ── */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem 5rem 7rem;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--clr-primary);
+    margin-bottom: 1.8rem;
+    outline: none;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.6rem;
+    color: var(--clr-accent);
+}
+.hero-divider__line {
+    flex: 0 0 2.2rem;
+    height: 1px;
+    background-color: var(--clr-accent);
+    display: block;
+}
+.hero-divider__dot {
+    font-size: 0.6rem;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    font-weight: 300;
+    color: var(--clr-text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.8rem;
+    text-align: left;
+}
+
+/* ── Buttons ── */
+.hero-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.btn--filled {
+    background-color: var(--clr-btn-fill);
+    color: #fff;
+    border: 1.5px solid var(--clr-btn-fill);
+}
+.btn--filled:hover {
+    background-color: var(--clr-btn-fill-hov);
+    border-color: var(--clr-btn-fill-hov);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--clr-text);
+    border: 1.5px solid var(--clr-accent);
+}
+.btn--outline:hover {
+    background-color: var(--clr-accent);
+    color: #fff;
+}
+
+/* ── Right image panel ── */
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+.hero-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Gradient fade so image blends into the cream background */
+.hero-image__fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        var(--clr-bg) 0%,
+        rgba(245, 237, 224, 0.55) 28%,
+        transparent 58%
+    );
+    z-index: 2;
+}

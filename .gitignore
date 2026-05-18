@@ -1,0 +1,25 @@
+## .NET build output
+bin/
+obj/
+
+## User-specific Visual Studio files
+*.user
+*.suo
+.vs/
+
+## Rider
+.idea/
+
+## Playwright MCP session snapshots (generated during development)
+.playwright-mcp/
+
+## Development screenshots (generated during development)
+screenshot-*.png
+
+## macOS
+.DS_Store
+
+## Environment / secrets
+*.env
+appsettings.*.json
+!appsettings.json

@@ -1,0 +1,36 @@
+@using Patisserie.Models
+
+<section class="gallery" id="galerie">
+    <div class="gallery-header">
+        <h2 class="gallery-title">Galerie</h2>
+        <div class="gallery-divider" aria-hidden="true">
+            <span class="gallery-divider__line"></span>
+            <span class="gallery-divider__dot">✦</span>
+            <span class="gallery-divider__line"></span>
+        </div>
+    </div>
+
+    @if (IsLoading)
+    {
+        <p class="gallery-loading">Galerie wird geladen …</p>
+    }
+    else if (Items is { Count: > 0 })
+    {
+        <div class="masonry">
+            @foreach (var item in Items)
+            {
+                <figure class="masonry-item">
+                    <img src="@item.ImagePath" alt="@item.Alt" loading="lazy" />
+                    @if (!string.IsNullOrWhiteSpace(item.Title))
+                    {
+                        <figcaption>@item.Title</figcaption>
+                    }
+                </figure>
+            }
+        </div>
+    }
+    else if (!IsLoading)
+    {
+        <p class="gallery-empty">Keine Bilder vorhanden.</p>
+    }
+</section>

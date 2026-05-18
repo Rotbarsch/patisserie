@@ -1,0 +1,170 @@
+/* =========================================================
+   Cormorant Garamond – self-hosted from Google Fonts
+   ========================================================= */
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/CormorantGaramond-SemiBoldItalic.ttf') format('truetype');
+}
+
+/* =========================================================
+   Design tokens
+   ========================================================= */
+:root {
+    --clr-bg:           #f5ede0;
+    --clr-bg-alt:       #ede3d5;
+    --clr-primary:      #7a4f2e;
+    --clr-secondary:    #a67c5b;
+    --clr-accent:       #c9a882;
+    --clr-text:         #5a3a1e;
+    --clr-text-muted:   #9b7355;
+    --clr-btn-fill:     #8b6045;
+    --clr-btn-fill-hov: #7a4f2e;
+
+    --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+    --nav-height: 110px;
+    --nav-logo-size: 180px;
+}
+
+/* =========================================================
+   Reset & base
+   ========================================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: var(--font-serif);
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* =========================================================
+   Blazor error / loading UI
+   ========================================================= */
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    display: none;
+    left: 0;
+    padding: .6rem 1.25rem .7rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: .75rem; top: .5rem; }
+
+.loading-progress {
+    position: relative;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 20vh auto 1rem;
+}
+.loading-progress circle {
+    fill: none;
+    stroke: #e0cfc0;
+    stroke-width: .6rem;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+.loading-progress circle:last-child {
+    stroke: var(--clr-primary);
+    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+    transition: stroke-dasharray .05s ease-in-out;
+}
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: 600;
+    inset: calc(20vh + 3.25rem) 0 auto;
+    font-family: var(--font-serif);
+    color: var(--clr-primary);
+}
+.loading-progress-text::after { content: var(--blazor-load-percentage-text, "Laden..."); }
+
+/* =========================================================
+   Stub / placeholder pages
+   ========================================================= */
+.page-stub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--nav-height));
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: var(--font-serif);
+    color: var(--clr-text-muted);
+}
+
+.page-stub h1 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: var(--clr-primary);
+    margin-bottom: 1rem;
+}
+
+.page-stub p {
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+/* =========================================================
+   Subtle background texture (damask-inspired SVG pattern)
+   ========================================================= */
+body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a882' stroke-width='0.35' opacity='0.25'%3E%3Cellipse cx='60' cy='60' rx='18' ry='28'/%3E%3Cellipse cx='60' cy='60' rx='28' ry='18'/%3E%3Ccircle cx='60' cy='60' r='6'/%3E%3Cpath d='M60 32 Q72 45 60 60 Q48 45 60 32Z'/%3E%3Cpath d='M60 88 Q72 75 60 60 Q48 75 60 88Z'/%3E%3Cpath d='M32 60 Q45 72 60 60 Q45 48 32 60Z'/%3E%3Cpath d='M88 60 Q75 72 60 60 Q75 48 88 60Z'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='120' cy='0' r='4'/%3E%3Ccircle cx='0' cy='120' r='4'/%3E%3Ccircle cx='120' cy='120' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 120px 120px;
+}
+
+
