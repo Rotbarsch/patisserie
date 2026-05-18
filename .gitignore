@@ -15,6 +15,10 @@ obj/
 
 ## Development screenshots (generated during development)
 screenshot-*.png
+portrait-*.png
+deployed-*.png
+actions-*.png
+reference.png
 
 ## macOS
 .DS_Store
