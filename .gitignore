@@ -16,9 +16,13 @@ obj/
 ## Development screenshots (generated during development)
 screenshot-*.png
 portrait-*.png
+live-*.png
 deployed-*.png
 actions-*.png
 reference.png
+
+## Source assets not needed in the repo (processed versions are in wwwroot/)
+logo.jpg
 
 ## macOS
 .DS_Store
