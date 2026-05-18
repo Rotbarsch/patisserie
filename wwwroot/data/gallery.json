@@ -1,47 +1,48 @@
 [
   {
-    "imagePath": "/images/gallery-cake1.jpg",
+    "imagePath": "images/gallery-cake1.jpg",
     "alt": "Mehrstöckige Hochzeitstorte mit Blütendekor",
     "title": "Hochzeitstorte Vintage"
   },
   {
-    "imagePath": "/images/gallery-cake2.jpg",
+    "imagePath": "images/gallery-cake2.jpg",
     "alt": "Elegante Torte mit Fondantdecke",
     "title": "Fondant-Traum"
   },
   {
-    "imagePath": "/images/gallery-cake3.jpg",
+    "imagePath": "images/gallery-cake3.jpg",
     "alt": "Rustikale Naked Cake mit frischen Beeren",
     "title": "Naked Cake Sommer"
   },
   {
-    "imagePath": "/images/gallery-cake4.jpg",
+    "imagePath": "images/gallery-cake4.jpg",
     "alt": "Macarons-Turm in Pastelltönen",
     "title": "Macaron-Tower"
   },
   {
-    "imagePath": "/images/gallery-cake5.jpg",
+    "imagePath": "images/gallery-cake5.jpg",
     "alt": "Geburtstagstorte mit handgemaltem Motiv",
     "title": "Geburtstags-Kunstwerk"
   },
   {
-    "imagePath": "/images/gallery-cake6.jpg",
+    "imagePath": "images/gallery-cake6.jpg",
     "alt": "Kleine Törtchen für besondere Anlässe",
     "title": "Mini Gâteaux"
   },
   {
-    "imagePath": "/images/gallery-cake7.jpg",
+    "imagePath": "images/gallery-cake7.jpg",
     "alt": "Drip Cake mit Golddekor",
     "title": "Golden Drip"
   },
   {
-    "imagePath": "/images/gallery-cake8.jpg",
+    "imagePath": "images/gallery-cake8.jpg",
     "alt": "Zarte Eclairs und Patisserie-Gebäck",
     "title": "Patisserie-Auswahl"
   },
   {
-    "imagePath": "/images/gallery-cake9.jpg",
+    "imagePath": "images/gallery-cake9.jpg",
     "alt": "Hochzeitstorte mit frischen Rosen",
     "title": "Rosen & Romantik"
   }
 ]
+
