@@ -44,9 +44,15 @@
 }
 
 .step-icon {
-    font-size: 1.8rem;
+    width: 2rem;
+    height: 2rem;
     color: var(--clr-secondary);
     margin: 0.3rem 0;
+}
+
+.step-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .step-title {
