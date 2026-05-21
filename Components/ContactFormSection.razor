@@ -1,0 +1,76 @@
+@* Contact / order form powered by web3forms.
+   Redirects to /danke on success.
+   hCaptcha is loaded automatically by the web3forms script in index.html.
+   Remember to enable hCaptcha in your web3forms dashboard:
+   https://app.web3forms.com *@
+
+<section class="contact-section">
+    <div class="contact-inner">
+        <div class="section-header">
+            <h2 class="section-title">@Title</h2>
+            <div class="section-divider" aria-hidden="true">
+                <span class="divider-line"></span>
+                <span class="divider-dot">✦</span>
+                <span class="divider-line"></span>
+            </div>
+            <p class="contact-lead">@Subtitle</p>
+        </div>
+
+        <form action="https://api.web3forms.com/submit"
+              method="POST"
+              class="contact-form"
+              novalidate>
+
+            <!-- web3forms config -->
+            <input type="hidden" name="access_key" value="4d1ffb0d-4322-40c6-9d6b-e1580bc37ed5" />
+            <input type="hidden" name="subject" value="Neue Anfrage – Backzauber" />
+            <input type="hidden" name="from_name" value="Backzauber Website" />
+            <input type="hidden" name="redirect" value="https://rotbarsch.github.io/patisserie/danke" />
+            <!-- Honeypot -->
+            <input type="checkbox" name="botcheck" style="display:none" />
+
+            <div class="form-row form-row--two">
+                <div class="form-group">
+                    <label for="cf-name">Name *</label>
+                    <input type="text" id="cf-name" name="name" placeholder="Dein Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="cf-email">E-Mail *</label>
+                    <input type="email" id="cf-email" name="email" placeholder="deine@email.de" required />
+                </div>
+            </div>
+
+            <div class="form-row form-row--two">
+                <div class="form-group">
+                    <label for="cf-occasion">Anlass</label>
+                    <select id="cf-occasion" name="Anlass">
+                        <option value="" disabled selected>Bitte wählen …</option>
+                        <option>Hochzeit</option>
+                        <option>Geburtstag</option>
+                        <option>Taufe / Kommunion</option>
+                        <option>Firmenevent</option>
+                        <option>Sonstiges</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cf-date">Gewünschter Termin</label>
+                    <input type="date" id="cf-date" name="Termin" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cf-message">Nachricht *</label>
+                <textarea id="cf-message" name="message" rows="5"
+                          placeholder="Beschreibe deine Wunsch-Torte: Größe, Thema, Geschmack, besondere Wünsche …"
+                          required></textarea>
+            </div>
+
+            <!-- hCaptcha — populated by web3forms script -->
+            <div class="h-captcha" data-captcha="true"></div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn-submit">Anfrage senden</button>
+            </div>
+        </form>
+    </div>
+</section>

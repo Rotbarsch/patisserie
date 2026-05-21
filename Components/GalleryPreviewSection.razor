@@ -1,0 +1,47 @@
+@* Gallery preview with category tabs — images fed from data/gallery.json *@
+
+<section class="gallery-preview">
+    <div class="section-header">
+        <h2 class="section-title">Galerie</h2>
+        <div class="section-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-dot">✦</span>
+            <span class="divider-line"></span>
+        </div>
+    </div>
+
+    @if (Items is not null)
+    {
+        <div class="category-tabs" role="tablist">
+            @foreach (var cat in Categories)
+            {
+                <button role="tab"
+                        class="category-tab @(ActiveCategory == cat ? "category-tab--active" : "")"
+                        @onclick="() => ActiveCategory = cat">
+                    @cat
+                </button>
+            }
+        </div>
+
+        <div class="preview-grid">
+            @foreach (var item in FilteredItems)
+            {
+                <figure class="preview-item">
+                    <img src="@item.ImagePath" alt="@item.Alt" loading="lazy" />
+                    @if (!string.IsNullOrEmpty(item.Title))
+                    {
+                        <figcaption>@item.Title</figcaption>
+                    }
+                </figure>
+            }
+        </div>
+
+        <div class="gallery-link-wrap">
+            <a href="galerie" class="btn-link">Alle Bilder ansehen →</a>
+        </div>
+    }
+    else
+    {
+        <p class="loading">Lädt …</p>
+    }
+</section>

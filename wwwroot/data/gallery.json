@@ -2,47 +2,56 @@
   {
     "imagePath": "images/gallery-cake1.jpg",
     "alt": "Mehrstöckige Hochzeitstorte mit Blütendekor",
-    "title": "Hochzeitstorte Vintage"
+    "title": "Hochzeitstorte Vintage",
+    "category": "Hochzeitstorten"
   },
   {
     "imagePath": "images/gallery-cake2.jpg",
     "alt": "Elegante Torte mit Fondantdecke",
-    "title": "Fondant-Traum"
+    "title": "Fondant-Traum",
+    "category": "Hochzeitstorten"
   },
   {
     "imagePath": "images/gallery-cake3.jpg",
     "alt": "Rustikale Naked Cake mit frischen Beeren",
-    "title": "Naked Cake Sommer"
+    "title": "Naked Cake Sommer",
+    "category": "Motivtorten"
   },
   {
     "imagePath": "images/gallery-cake4.jpg",
     "alt": "Macarons-Turm in Pastelltönen",
-    "title": "Macaron-Tower"
+    "title": "Macaron-Tower",
+    "category": "Macarons & Patisserie"
   },
   {
     "imagePath": "images/gallery-cake5.jpg",
     "alt": "Geburtstagstorte mit handgemaltem Motiv",
-    "title": "Geburtstags-Kunstwerk"
+    "title": "Geburtstags-Kunstwerk",
+    "category": "Motivtorten"
   },
   {
     "imagePath": "images/gallery-cake6.jpg",
     "alt": "Kleine Törtchen für besondere Anlässe",
-    "title": "Mini Gâteaux"
+    "title": "Mini Gâteaux",
+    "category": "Details"
   },
   {
     "imagePath": "images/gallery-cake7.jpg",
     "alt": "Drip Cake mit Golddekor",
-    "title": "Golden Drip"
+    "title": "Golden Drip",
+    "category": "Motivtorten"
   },
   {
     "imagePath": "images/gallery-cake8.jpg",
     "alt": "Zarte Eclairs und Patisserie-Gebäck",
-    "title": "Patisserie-Auswahl"
+    "title": "Patisserie-Auswahl",
+    "category": "Macarons & Patisserie"
   },
   {
     "imagePath": "images/gallery-cake9.jpg",
     "alt": "Hochzeitstorte mit frischen Rosen",
-    "title": "Rosen & Romantik"
+    "title": "Rosen & Romantik",
+    "category": "Hochzeitstorten"
   }
 ]
 

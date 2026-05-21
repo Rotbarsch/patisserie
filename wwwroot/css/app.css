@@ -132,6 +132,41 @@ img { display: block; max-width: 100%; }
 .loading-progress-text::after { content: var(--blazor-load-percentage-text, "Laden..."); }
 
 /* =========================================================
+   Shared section header (used across multiple section components)
+   ========================================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--clr-primary);
+    margin-bottom: 0.75rem;
+}
+
+.section-divider {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--clr-accent);
+}
+
+.divider-line {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--clr-accent);
+    display: block;
+}
+
+.divider-dot {
+    font-size: 0.65rem;
+}
+
+/* =========================================================
    Stub / placeholder pages
    ========================================================= */
 .page-stub {

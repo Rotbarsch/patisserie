@@ -1,0 +1,72 @@
+.danke {
+    min-height: calc(100vh - var(--nav-height) - 18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-bg);
+    padding: 4rem 2rem;
+}
+
+.danke-inner {
+    text-align: center;
+    max-width: 560px;
+}
+
+.danke-ornament {
+    font-size: 2.5rem;
+    color: var(--clr-accent);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.danke-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+}
+
+.danke-divider {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--clr-accent);
+    margin-bottom: 1.8rem;
+}
+
+.danke-line {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--clr-accent);
+    display: block;
+}
+
+.danke-dot {
+    font-size: 0.65rem;
+}
+
+.danke-text {
+    color: var(--clr-text-muted);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.danke-btn {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    padding: 0.65rem 2.2rem;
+    background-color: var(--clr-btn-fill);
+    color: #fff;
+    border: 1.5px solid var(--clr-btn-fill);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.danke-btn:hover {
+    background-color: var(--clr-btn-fill-hov);
+    border-color: var(--clr-btn-fill-hov);
+}

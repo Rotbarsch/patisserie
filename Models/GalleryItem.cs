@@ -12,4 +12,7 @@ public class GalleryItem
 
     [JsonPropertyName("title")]
     public string? Title { get; set; }
+
+    [JsonPropertyName("category")]
+    public string? Category { get; set; }
 }

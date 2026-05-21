@@ -20,6 +20,7 @@ live-*.png
 deployed-*.png
 actions-*.png
 reference.png
+template.jpg
 
 ## Source assets not needed in the repo (processed versions are in wwwroot/)
 logo.jpg

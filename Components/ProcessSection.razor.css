@@ -1,0 +1,82 @@
+.process-section {
+    padding: 5rem 6rem;
+    background-color: var(--clr-bg-alt);
+    text-align: center;
+}
+
+/* ── Steps grid ── */
+.process-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 2rem 1.2rem;
+    background-color: var(--clr-bg);
+    border: 1px solid rgba(201, 168, 130, 0.3);
+    position: relative;
+}
+
+/* Connector line between steps (desktop) */
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 2.8rem;
+    right: -1rem;
+    width: calc(2rem - 2px);
+    height: 1px;
+    background-color: var(--clr-accent);
+    opacity: 0.5;
+}
+
+.step-number {
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--clr-accent);
+}
+
+.step-icon {
+    font-size: 1.8rem;
+    color: var(--clr-secondary);
+    margin: 0.3rem 0;
+}
+
+.step-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--clr-primary);
+    margin: 0;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    margin-top: 0.2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .process-section { padding: 4rem 3rem; }
+    .process-step::after { display: none; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .process-section { padding: 3.5rem 1.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .process-steps { grid-template-columns: 1fr; }
+}
