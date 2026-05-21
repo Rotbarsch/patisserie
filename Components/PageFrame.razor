@@ -6,53 +6,43 @@
                 Paths extend into positive x,y (for TL; mirrors handle the rest).
                 Reused via <use> + SVG transform inside nested <svg> corner anchors.
             -->
+            <!--
+                C-scroll corner ornament.
+                Origin (0,0) = frame-line junction.
+                The ornament is strictly symmetric about the y=x diagonal:
+                every element has a matching element with x and y swapped.
+                The frame <rect> provides the arm lines from (0,0) to the
+                scroll endpoints — no explicit arm lines needed here.
+            -->
             <g id="corner-orn"
                fill="none" stroke="currentColor"
                stroke-linecap="round" stroke-linejoin="round">
 
-                <!-- Junction dot at the frame corner -->
+                <!-- Junction dot -->
                 <circle cx="0" cy="0" r="1.5" fill="currentColor" stroke="none"/>
 
                 <!--
-                    Arms: explicit lines from junction along the frame lines to where
-                    the terminal curls begin. These overlap with and visually reinforce
-                    the frame rect strokes, so the ornament flows continuously from the
-                    corner rather than appearing disconnected.
+                    Main C-sweep: from horizontal arm at (44,0) to vertical arm at (0,44).
+                    Control points (44,18) and (18,44) are x↔y mirrors of each other,
+                    guaranteeing exact diagonal symmetry. Midpoint falls on y=x at ≈(29,29).
                 -->
-                <line x1="0" y1="0" x2="52" y2="0" stroke-width="0.75" stroke-linecap="butt"/>
-                <line x1="0" y1="0" x2="0" y2="52" stroke-width="0.75" stroke-linecap="butt"/>
+                <path d="M 44,0 C 44,18 18,44 0,44" stroke-width="0.85"/>
 
-                <!-- Main volute: 1.5-turn baroque scroll from horizontal arm -->
-                <path d="M 50,3
-                         C 62,3 68,20 62,36
-                         C 56,52 40,60 24,56
-                         C 8,52 2,38 6,24
-                         C 10,10 22,4 34,8
-                         C 46,12 50,26 44,36
-                         C 38,46 24,48 14,42
-                         C 4,36 4,22 12,16
-                         C 20,10 32,12 34,22
-                         C 36,32 28,38 20,34"
-                      stroke-width="0.9"/>
+                <!-- Curl at horizontal arm end -->
+                <path d="M 44,0 C 50,-1 54,6 49,11 C 44,16 38,12 41,7" stroke-width="0.75"/>
 
-                <!-- Tendril at volute tip -->
-                <path d="M 20,34 C 16,40 20,46 26,42" stroke-width="0.75"/>
+                <!-- Curl at vertical arm end — x↔y of horizontal curl -->
+                <path d="M 0,44 C -1,50 6,54 11,49 C 16,44 12,38 7,41" stroke-width="0.75"/>
 
-                <!-- Terminal curl at horizontal arm end -->
-                <path d="M 52,1 C 57,-1 63,5 59,12 C 55,18 48,14 50,7"
-                      stroke-width="0.8"/>
+                <!--
+                    Leaf accents near t≈0.25 of the C-sweep (curve point ≈(40,14))
+                    and its x↔y mirror (≈(14,40)).
+                -->
+                <path d="M 40,14 C 36,21 29,20 31,14" stroke-width="0.65"/>
+                <path d="M 14,40 C 21,36 20,29 14,31" stroke-width="0.65"/>
 
-                <!-- Terminal curl at vertical arm end -->
-                <path d="M 1,52 C -1,57 5,63 12,59 C 18,55 14,48 7,50"
-                      stroke-width="0.8"/>
-
-                <!-- Leaf accents along horizontal arm (y≈0) -->
-                <path d="M 26,0 C 22,6 17,5 19,1" stroke-width="0.7"/>
-                <path d="M 36,0 C 32,6 27,5 29,1" stroke-width="0.7"/>
-
-                <!-- Leaf accents along vertical arm (x≈0) -->
-                <path d="M 0,26 C 6,22 5,17 1,19" stroke-width="0.7"/>
-                <path d="M 0,36 C 6,32 5,27 1,29" stroke-width="0.7"/>
+                <!-- Small accent dot at C-sweep midpoint (≈29,29 on the y=x diagonal) -->
+                <circle cx="29" cy="29" r="1" fill="currentColor" stroke="none"/>
             </g>
         </defs>
 
