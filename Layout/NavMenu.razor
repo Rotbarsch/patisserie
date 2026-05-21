@@ -1,19 +1,4 @@
 <header class="nav-header">
-    <!-- Decorative corner ornaments -->
-    <svg class="corner corner--tl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 98 Q2 2 98 2" stroke="#c9a882" stroke-width="1.2" fill="none"/>
-        <path d="M12 98 Q12 12 98 12" stroke="#c9a882" stroke-width="0.5" fill="none" opacity="0.45"/>
-        <circle cx="2" cy="2" r="2.5" fill="#c9a882"/>
-        <path d="M2 24 L9 17 L16 24" stroke="#c9a882" stroke-width="1" fill="none"/>
-        <circle cx="2" cy="2" r="1" fill="none" stroke="#c9a882" stroke-width="0.5"/>
-    </svg>
-    <svg class="corner corner--tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M98 98 Q98 2 2 2" stroke="#c9a882" stroke-width="1.2" fill="none"/>
-        <path d="M88 98 Q88 12 2 12" stroke="#c9a882" stroke-width="0.5" fill="none" opacity="0.45"/>
-        <circle cx="98" cy="2" r="2.5" fill="#c9a882"/>
-        <path d="M98 24 L91 17 L84 24" stroke="#c9a882" stroke-width="1" fill="none"/>
-    </svg>
-
     <nav class="nav-bar" aria-label="Hauptnavigation">
         <!-- Left nav items (with trailing pipe toward logo) -->
         <ul class="nav-list nav-list--left">
@@ -37,10 +22,8 @@
             <li class="nav-sep" aria-hidden="true">|</li>
             <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener" class="nav-link nav-link--icon" aria-label="Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="images/icons.svg#instagram"/>
                     </svg>
                 </a>
             </li>
@@ -50,10 +33,7 @@
     <!-- Bottom ornamental rule -->
     <div class="nav-rule" aria-hidden="true">
         <span class="nav-rule__line"></span>
-        <svg class="nav-rule__ornament" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 8 Q15 2 30 8 Q45 14 60 8" stroke="#c9a882" stroke-width="1" fill="none"/>
-            <circle cx="30" cy="8" r="2.5" fill="#c9a882"/>
-        </svg>
+        <img class="nav-rule__ornament" src="images/nav-rule-ornament.svg" aria-hidden="true" alt=""/>
         <span class="nav-rule__line"></span>
     </div>
 </header>

@@ -13,6 +13,15 @@
                 <!-- Junction dot at the frame corner -->
                 <circle cx="0" cy="0" r="1.5" fill="currentColor" stroke="none"/>
 
+                <!--
+                    Arms: explicit lines from junction along the frame lines to where
+                    the terminal curls begin. These overlap with and visually reinforce
+                    the frame rect strokes, so the ornament flows continuously from the
+                    corner rather than appearing disconnected.
+                -->
+                <line x1="0" y1="0" x2="52" y2="0" stroke-width="0.75" stroke-linecap="butt"/>
+                <line x1="0" y1="0" x2="0" y2="52" stroke-width="0.75" stroke-linecap="butt"/>
+
                 <!-- Main volute: 1.5-turn baroque scroll from horizontal arm -->
                 <path d="M 50,3
                          C 62,3 68,20 62,36
