@@ -87,26 +87,8 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* =========================================================
-   Page frame — border-image with built-in corner ornaments
-   Slice at 80 matches the 80×80 corner zones in page-frame.svg.
-   The frame lines inside the SVG sit at offset 10, so they render
-   exactly 10 px from each viewport edge with zero gap to the corners.
+   Page frame — inline SVG fixed overlay (see PageFrame.razor)
    ========================================================= */
-.page-frame {
-    position: fixed;
-    inset: 0;
-    border: 80px solid transparent;
-    border-image-source: url('../images/page-frame.svg');
-    border-image-slice: 80;
-    border-image-repeat: stretch;
-    pointer-events: none;
-    z-index: 900;
-    opacity: 0.6;
-}
-
-@media (max-width: 768px) {
-    .page-frame { border-width: 56px; border-image-width: 56px; opacity: 0.35; }
-}
 
 /* =========================================================
    Blazor error / loading UI
