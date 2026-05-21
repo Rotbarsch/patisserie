@@ -87,6 +87,22 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* =========================================================
+   Page frame — thin rectangular border fixed to viewport
+   ========================================================= */
+.page-frame {
+    position: fixed;
+    inset: 10px;
+    border: 0.75px solid var(--clr-accent);
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 898;
+}
+
+@media (max-width: 768px) {
+    .page-frame { inset: 6px; opacity: 0.3; }
+}
+
+/* =========================================================
    Blazor error / loading UI
    ========================================================= */
 #blazor-error-ui {
