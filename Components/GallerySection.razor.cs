@@ -11,7 +11,16 @@ public partial class GallerySection : ComponentBase
     protected List<GalleryItem>? Items { get; private set; }
     protected bool IsLoading { get; private set; } = true;
 
-    // Path to the JSON file served from wwwroot/data/
+    protected string? ActiveCategory { get; set; } = null; // null = show all
+
+    protected IReadOnlyList<string> Categories { get; } =
+        ["Hochzeitstorten", "Motivtorten", "Macarons & Patisserie", "Kinder-Motivtorten"];
+
+    protected IEnumerable<GalleryItem> FilteredItems =>
+        Items is null ? [] :
+        ActiveCategory is null ? Items :
+        Items.Where(i => i.Category == ActiveCategory);
+
     private const string DataPath = "data/gallery.json";
 
     protected override async Task OnInitializedAsync()

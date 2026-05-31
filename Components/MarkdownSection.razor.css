@@ -1,0 +1,71 @@
+.markdown-section {
+    max-width: 720px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    font-family: var(--font-body);
+    color: var(--clr-text);
+    line-height: 1.75;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--clr-accent);
+    margin-bottom: 0.5em;
+}
+
+.markdown-section h1 { font-size: 2.4rem; }
+.markdown-section h2 { font-size: 1.8rem; }
+.markdown-section h3 { font-size: 1.4rem; }
+
+.markdown-section p { margin-bottom: 1.2em; }
+
+.markdown-section a {
+    color: var(--clr-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.markdown-section ul,
+.markdown-section ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.2em;
+}
+
+.markdown-section li { margin-bottom: 0.4em; }
+
+/* ==highlighted text== → <mark>
+   ::deep because the HTML is injected via MarkupString and lacks the Blazor scope attribute */
+.markdown-section ::deep mark {
+    background: none;
+    color: var(--clr-accent);
+    font-style: italic;
+}
+
+/* > blockquote → pull-quote style */
+.markdown-section ::deep blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 2px solid var(--clr-accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--clr-accent);
+    opacity: 0.85;
+}
+
+.markdown-section ::deep blockquote p { margin: 0; }
+
+/* ::: intro custom container */
+.markdown-section ::deep .intro {
+    background: color-mix(in srgb, var(--clr-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--clr-accent) 20%, transparent);
+    border-radius: 2px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+.markdown-section--error { opacity: 0.6; font-style: italic; }

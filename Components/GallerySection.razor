@@ -16,8 +16,24 @@
     }
     else if (Items is { Count: > 0 })
     {
+        <div class="category-tabs" role="tablist">
+            <button role="tab"
+                    class="category-tab @(ActiveCategory is null ? "category-tab--active" : "")"
+                    @onclick="() => ActiveCategory = null">
+                Alle
+            </button>
+            @foreach (var cat in Categories)
+            {
+                <button role="tab"
+                        class="category-tab @(ActiveCategory == cat ? "category-tab--active" : "")"
+                        @onclick="() => ActiveCategory = cat">
+                    @cat
+                </button>
+            }
+        </div>
+
         <div class="masonry">
-            @foreach (var item in Items)
+            @foreach (var item in FilteredItems)
             {
                 <figure class="masonry-item">
                     <img src="@item.ImagePath" alt="@item.Alt" loading="lazy" />

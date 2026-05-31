@@ -23,6 +23,79 @@ The full Galerie page shows all images regardless of category.
 
 Place new image files in `wwwroot/images/` and reference them as `"images/your-file.jpg"` (no leading slash).
 
+### Markdown formatting options (`wwwroot/content/`)
+
+The content files are processed by Markdig with all advanced extensions plus SmartyPants enabled. You can use much more than plain text and headings.
+
+#### Standard formatting
+
+```markdown
+**fett**     *kursiv*     ~~durchgestrichen~~
+
+- Listenitem
+- Noch ein Item
+
+1. Nummeriert
+2. Punkt zwei
+```
+
+#### Highlighted text `==...==`
+
+Wraps text in a `<mark>` element — styled here in accent colour, italic, no background:
+
+```markdown
+Ich liebe es, ==essbare Kunstwerke== entstehen zu lassen.
+```
+
+#### Pull-quote blockquote `>`
+
+A blockquote is rendered in display font, accent colour, with a left border — ideal for a motto or key sentence:
+
+```markdown
+> Jede Torte ist ein Stück Herzarbeit.
+```
+
+#### Custom containers `:::`
+
+Creates a styled `<div class="intro">` box (soft accent background + border). Use for introductory passages:
+
+```markdown
+::: intro
+Willkommen in meiner kleinen Zuckerwelt – hier dreht sich alles um Torten mit Charakter.
+:::
+```
+
+Any class name after `:::` is added to the `<div>`. The `intro` class is pre-styled; other names can be targeted with custom CSS.
+
+#### Generic attributes `{.class #id}`
+
+Attach a CSS class or id to any block element:
+
+```markdown
+## Meine Geschichte {.section-title}
+
+Ein Absatz mit besonderer Klasse. {.lead}
+```
+
+#### SmartyPants (typographic punctuation)
+
+Straight quotes and dashes are automatically converted:
+
+| Written | Rendered |
+|---------|----------|
+| `"Torte"` | "Torte" (curly quotes) |
+| `--` | – (en dash) |
+| `---` | — (em dash) |
+| `...` | … (ellipsis) |
+
+> **Note:** SmartyPants uses English-style curly quotes (`"…"`) by default, not German guillemets (`„…"`). Write German quotes directly in the file if needed.
+
+#### Horizontal rule
+
+```markdown
+---
+```
+
 ---
 
 ### Testimonials (`wwwroot/data/testimonials.json`)
@@ -65,6 +138,19 @@ To make hCaptcha mandatory server-side, log in to your web3forms dashboard and e
 3. Enable **hCaptcha** as the spam-blocking method
 
 Without this step the widget renders but submissions are not blocked server-side if the captcha is skipped.
+
+---
+
+### Page content (`wwwroot/content/`)
+
+The **Über mich** and **Kontakt** pages are driven by Markdown files. Edit them freely — standard Markdown is supported (headings, paragraphs, lists, links, bold/italic).
+
+| File | Page |
+|------|------|
+| `wwwroot/content/ueber-mich.md` | `/ueber-mich` |
+| `wwwroot/content/kontakt.md` | `/kontakt` |
+
+The files are fetched at runtime by the `MarkdownSection` component and rendered via [Markdig](https://github.com/xoofx/markdig).
 
 ---
 

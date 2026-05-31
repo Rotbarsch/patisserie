@@ -13,7 +13,7 @@ public partial class GalleryPreviewSection : ComponentBase
     protected string ActiveCategory { get; set; } = "Hochzeitstorten";
 
     protected IReadOnlyList<string> Categories { get; } =
-        ["Hochzeitstorten", "Motivtorten", "Macarons & Patisserie", "Details"];
+        ["Hochzeitstorten", "Motivtorten", "Macarons & Patisserie", "Kinder-Motivtorten"];
 
     protected IEnumerable<GalleryItem> FilteredItems =>
         Items?.Where(i => i.Category == ActiveCategory).Take(4)

@@ -1,0 +1,12 @@
+@if (_html is not null)
+{
+    <section class="markdown-section">
+        @((MarkupString)_html)
+    </section>
+}
+else if (_error is not null)
+{
+    <section class="markdown-section markdown-section--error">
+        <p>@_error</p>
+    </section>
+}

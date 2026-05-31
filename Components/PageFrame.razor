@@ -1,85 +1,38 @@
 ﻿<div class="page-frame-wrapper" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <svg xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
         <defs>
-            <!--
-                Corner ornament with (0,0) at the frame-line junction.
-                Paths extend into positive x,y (for TL; mirrors handle the rest).
-                Reused via <use> + SVG transform inside nested <svg> corner anchors.
-            -->
-            <!--
-                C-scroll corner ornament.
-                Origin (0,0) = frame-line junction.
-                The ornament is strictly symmetric about the y=x diagonal:
-                every element has a matching element with x and y swapped.
-                The frame <rect> provides the arm lines from (0,0) to the
-                scroll endpoints — no explicit arm lines needed here.
-            -->
             <g id="corner-orn"
                fill="none" stroke="currentColor"
                stroke-linecap="round" stroke-linejoin="round">
-
-                <!-- Junction dot -->
                 <circle cx="0" cy="0" r="1.5" fill="currentColor" stroke="none"/>
-
-                <!--
-                    Main C-sweep: from horizontal arm at (44,0) to vertical arm at (0,44).
-                    Control points (44,18) and (18,44) are x↔y mirrors of each other,
-                    guaranteeing exact diagonal symmetry. Midpoint falls on y=x at ≈(29,29).
-                -->
                 <path d="M 44,0 C 44,18 18,44 0,44" stroke-width="0.85"/>
-
-                <!-- Curl at horizontal arm end -->
                 <path d="M 44,0 C 50,-1 54,6 49,11 C 44,16 38,12 41,7" stroke-width="0.75"/>
-
-                <!-- Curl at vertical arm end — x↔y of horizontal curl -->
                 <path d="M 0,44 C -1,50 6,54 11,49 C 16,44 12,38 7,41" stroke-width="0.75"/>
-
-                <!--
-                    Leaf accents near t≈0.25 of the C-sweep (curve point ≈(40,14))
-                    and its x↔y mirror (≈(14,40)).
-                -->
                 <path d="M 40,14 C 36,21 29,20 31,14" stroke-width="0.65"/>
                 <path d="M 14,40 C 21,36 20,29 14,31" stroke-width="0.65"/>
-
-                <!-- Small accent dot at C-sweep midpoint (≈29,29 on the y=x diagonal) -->
                 <circle cx="29" cy="29" r="1" fill="currentColor" stroke="none"/>
             </g>
         </defs>
 
-        <!--
-            Frame rectangle, 15 px inset from every viewport edge.
-            CSS calc() on SVG geometry properties is supported in all
-            modern browsers (Chrome 66+, Firefox 62+, Safari 12+).
-        -->
-        <rect style="x:15px; y:15px; width:calc(100% - 30px); height:calc(100% - 30px)"
+        <!-- Border rect at the site-wrapper edge -->
+        <rect x="0.375" y="0.375" width="calc(100% - 0.75px)" height="calc(100% - 0.75px)"
               fill="none" stroke="currentColor" stroke-width="0.75"/>
 
-        <!--
-            Corner anchors: nested <svg> elements positioned at each viewport corner
-            using percentage x/y. The inner SVG transform uses SVG attribute syntax
-            (not CSS), so scale() always pivots at the LOCAL origin (0,0) — the
-            junction point — not at a CSS bounding-box centre. This eliminates the
-            transform-origin misalignment that plagued the CSS-transform approach.
-        -->
-
-        <!-- TL: anchor at (0,0) -->
+        <!-- TL -->
         <svg x="0" y="0" overflow="visible">
-            <use href="#corner-orn" transform="translate(15,15)"/>
+            <use href="#corner-orn"/>
         </svg>
-
-        <!-- TR: anchor at (100%,0); scale(-1,1) mirrors horizontally at junction -->
+        <!-- TR -->
         <svg x="100%" y="0" overflow="visible">
-            <use href="#corner-orn" transform="translate(-15,15) scale(-1,1)"/>
+            <use href="#corner-orn" transform="scale(-1,1)"/>
         </svg>
-
-        <!-- BL: anchor at (0,100%); scale(1,-1) mirrors vertically at junction -->
+        <!-- BL -->
         <svg x="0" y="100%" overflow="visible">
-            <use href="#corner-orn" transform="translate(15,-15) scale(1,-1)"/>
+            <use href="#corner-orn" transform="scale(1,-1)"/>
         </svg>
-
-        <!-- BR: anchor at (100%,100%); scale(-1,-1) mirrors both axes at junction -->
+        <!-- BR -->
         <svg x="100%" y="100%" overflow="visible">
-            <use href="#corner-orn" transform="translate(-15,-15) scale(-1,-1)"/>
+            <use href="#corner-orn" transform="scale(-1,-1)"/>
         </svg>
     </svg>
 </div>

@@ -36,6 +36,35 @@
     font-size: 0.65rem;
 }
 
+/* ── Category tabs ── */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--clr-text-muted);
+    background: none;
+    border: none;
+    padding: 0.4rem 1.4rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.category-tab:hover { color: var(--clr-secondary); }
+
+.category-tab--active {
+    color: var(--clr-primary);
+    border-bottom-color: var(--clr-accent);
+}
+
 /* ── Masonry grid ── */
 .masonry {
     column-count: 3;
