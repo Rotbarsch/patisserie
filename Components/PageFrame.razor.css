@@ -16,7 +16,7 @@
 }
 
 .corner {
-    --orn-size: 150px;
+    --orn-size: 200px;
     position: absolute;
     width: var(--orn-size);
     height: var(--orn-size);
@@ -47,10 +47,10 @@
 }
 
 @media (max-width: 1024px) {
-    .corner { --orn-size: 100px; }
+    .corner { --orn-size: 140px; }
 }
 
 @media (max-width: 768px) {
-    .corner { --orn-size: 70px; }
+    .corner { --orn-size: 90px; }
     .page-frame-wrapper { opacity: 0.35; }
 }
