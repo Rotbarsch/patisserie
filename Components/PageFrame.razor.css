@@ -22,27 +22,27 @@
     height: var(--orn-size);
 }
 
-/* x_frac=0.1905, y_frac=0.1861 — shift so content junction aligns with border corner */
+/* x_frac=0.2262, y_frac=0.2229 — arm centerlines aligned to border corner */
 .corner-tl {
-    top: calc(var(--orn-size) * -0.1861);
-    left: calc(var(--orn-size) * -0.1905);
+    top: calc(var(--orn-size) * -0.2229);
+    left: calc(var(--orn-size) * -0.2262);
 }
 
 .corner-tr {
-    top: calc(var(--orn-size) * -0.1861);
-    right: calc(var(--orn-size) * -0.1905);
+    top: calc(var(--orn-size) * -0.2229);
+    right: calc(var(--orn-size) * -0.2262);
     transform: scaleX(-1);
 }
 
 .corner-bl {
-    bottom: calc(var(--orn-size) * -0.1861);
-    left: calc(var(--orn-size) * -0.1905);
+    bottom: calc(var(--orn-size) * -0.2229);
+    left: calc(var(--orn-size) * -0.2262);
     transform: scaleY(-1);
 }
 
 .corner-br {
-    bottom: calc(var(--orn-size) * -0.1861);
-    right: calc(var(--orn-size) * -0.1905);
+    bottom: calc(var(--orn-size) * -0.2229);
+    right: calc(var(--orn-size) * -0.2262);
     transform: scale(-1, -1);
 }
 
