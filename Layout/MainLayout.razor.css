@@ -10,3 +10,23 @@
 main {
     flex: 1;
 }
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+.footer-link {
+    color: var(--clr-text);
+    opacity: 0.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    color: var(--clr-accent);
+}

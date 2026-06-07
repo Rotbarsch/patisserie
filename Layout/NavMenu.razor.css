@@ -71,24 +71,18 @@
 }
 .nav-logo:hover img { opacity: 0.8; }
 
-/* Bottom ornamental rule */
+/* Bottom ornamental rule — gaps in centre for logo */
 .nav-rule {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr var(--nav-logo-size) 1fr;
     align-items: center;
     padding: 0 3rem 0.5rem;
-    gap: 0;
 }
 .nav-rule__line {
-    flex: 1;
     height: 1px;
     background-color: var(--clr-accent);
     opacity: 0.5;
     display: block;
-}
-.nav-rule__ornament {
-    width: 60px;
-    height: 16px;
-    flex-shrink: 0;
 }
 
 /* ── Tablet (≤1024px) ── */
@@ -134,7 +128,10 @@
     .nav-list--left  { flex: 0 1 auto; }
     .nav-list--right { flex: 0 1 auto; }
 
-    .nav-rule { padding: 0.4rem 1.5rem; }
+    .nav-rule {
+        display: flex;
+        padding: 0.4rem 1.5rem;
+    }
 }
 
 /* ── Small phones (≤480px) ── */

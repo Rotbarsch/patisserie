@@ -13,8 +13,7 @@ public partial class GallerySection : ComponentBase
 
     protected string? ActiveCategory { get; set; } = null; // null = show all
 
-    protected IReadOnlyList<string> Categories { get; } =
-        ["Hochzeitstorten", "Motivtorten", "Macarons & Patisserie", "Kinder-Motivtorten"];
+    protected IReadOnlyList<string> Categories { get; private set; } = [];
 
     protected IEnumerable<GalleryItem> FilteredItems =>
         Items is null ? [] :
@@ -27,12 +26,18 @@ public partial class GallerySection : ComponentBase
     {
         try
         {
-            Items = await Http.GetFromJsonAsync<List<GalleryItem>>(DataPath);
+            var data = await Http.GetFromJsonAsync<GalleryData>(DataPath);
+            Items = data?.Items ?? [];
+            Categories = (data?.Categories ?? [])
+                .OrderBy(c => c.Order)
+                .Select(c => c.Name)
+                .ToList();
         }
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Could not load gallery data from '{DataPath}': {ex.Message}");
             Items = [];
+            Categories = [];
         }
         finally
         {

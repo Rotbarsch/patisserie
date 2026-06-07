@@ -6,7 +6,31 @@ Blazor WebAssembly website for Backzauber, deployed to GitHub Pages.
 
 ### Gallery (`wwwroot/data/gallery.json`)
 
-Add, remove, or reorder images by editing this file. Each entry has:
+The file has two top-level sections: **`categories`** and **`items`**.
+
+#### `categories`
+
+Defines which filter tabs appear on both the Home preview and the full Galerie page, and in what order:
+
+```json
+"categories": [
+  { "name": "Hochzeitstorten",      "order": 1 },
+  { "name": "Motivtorten",          "order": 2 },
+  { "name": "Kinder-Motivtorten",   "order": 3 },
+  { "name": "Macarons & Patisserie","order": 4 }
+]
+```
+
+| Field | Description |
+|-------|-------------|
+| `name` | Category label shown on the tab button. Must match the `category` field used in items exactly. |
+| `order` | Integer that controls tab order (ascending). Lower numbers appear first. |
+
+To add a new category, append an entry here and assign the same string to the `category` field of the relevant items. To reorder tabs, change the `order` values. Removing a category entry hides its tab but does not remove the images — they will still appear under **Alle**.
+
+#### `items`
+
+Add, remove, or reorder images by editing this array. Each entry has:
 
 ```json
 {
@@ -17,9 +41,7 @@ Add, remove, or reorder images by editing this file. Each entry has:
 }
 ```
 
-**`category`** controls which tab the image appears under on the Home page preview.
-Available tab values: `Hochzeitstorten`, `Motivtorten`, `Macarons & Patisserie`, `Details`.
-The full Galerie page shows all images regardless of category.
+**`category`** must match the `name` of an entry in `categories` for the image to appear under that tab.
 
 Place new image files in `wwwroot/images/` and reference them as `"images/your-file.jpg"` (no leading slash).
 
@@ -143,7 +165,7 @@ Without this step the widget renders but submissions are not blocked server-side
 
 ### Page content (`wwwroot/content/`)
 
-The **Über mich** and **Kontakt** pages are driven by Markdown files. Edit them freely — standard Markdown is supported (headings, paragraphs, lists, links, bold/italic).
+The **Impressum**, **Über mich** and **Kontakt** pages are driven by Markdown files. Edit them freely — standard Markdown is supported (headings, paragraphs, lists, links, bold/italic).
 
 | File | Page |
 |------|------|
